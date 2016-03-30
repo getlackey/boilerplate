@@ -1,0 +1,6 @@
+{> "~/core/partials/structure" theme="sky" title="Hello World" /}
+
+{<content}
+    {@editable content=data.content path="title" editMode=edit/}
+    {@editable content=data.content path="intro" editMode=edit/}
+{/content}

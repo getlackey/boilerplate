@@ -1,0 +1,133 @@
+# Enimga Marketing Services webiste
+# Main module
+
+# In YML:
+#   indentation matters!
+#   you use dashes to list items
+#   &something creates reference
+#   *something will copy content linked by reference
+#   # is used for comments
+
+
+name : 'Enigma Website Core'
+
+# Dependencies
+require:
+    # For user manageent
+    - cms/users
+    # For CMS features
+    - cms/cms
+
+# Data that will be installed on deployment
+init:
+
+    Language:
+        -
+            code: en
+            enabled: true
+            default: true
+        -
+            code: pl
+            enabled: true
+
+    #
+    # ROLES
+    # Define basic roles in the system
+    # Roles like admin and developer are already defined, but can be extended
+    #
+    #
+
+    #
+    # USERS
+    # Default user accounts
+    # Unique id for users is email
+    #
+    # -
+    #   email: test@example.com (unique)
+    #   name: Some name
+    #   password: soMePa55worD
+    #   roles:
+    #       - editor
+    #       - member
+
+    User:
+        -
+            email : admin@example.com
+            name: Developer
+            password: password
+            roles:
+                - developer
+    #
+    # /USERS
+    #
+
+    #
+    # TAXONOMY TYPES
+    # Defines kinds of content classification (not values yet)
+    # Unique id for taxonomy types is name
+    #
+    # -
+    #   name: tag (unique)
+    #   label: Tag
+
+    #
+    # /TAXONOMY TYPES
+    #
+
+    #
+    # TAXONOMY
+    # Defines values which we can use to classify content
+    # Unique id for taxonomy is combination of name and type
+    #
+    # -
+    #   name: banana (unique part)
+    #   label: Banana
+    #   type: tag (unique part)
+    #
+    #
+    #
+    #
+
+    #
+    # /TAXONOMY
+    #
+
+
+    #
+    # TEMPLATES
+    # Templates define:
+    # - static template that CAN be reused between content
+    # - Shared Blocks
+    # - Abstract Blocks
+    # Unique id for template is combination of path and type. Default type is `template`
+
+    #
+    # /TEMPLATES
+    #
+
+    #
+    # CONTENT
+    #
+    Content:
+
+        # Homepage
+        # GET /
+        -
+            type: page
+            template: ~/core/index
+            route: /
+            state: published
+            layout:
+                type: Fields
+                title: Hello World
+                intro: |
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus convallis id justo id dictum. Fusce vitae quam porttitor libero sagittis congue eget in magna. Cras vestibulum condimentum quam at faucibus. Aenean nulla magna, elementum sed accumsan quis, interdum ut dolor. Donec consectetur orci quis venenatis bibendum. Integer id felis a diam elementum efficitur. In at diam at nisl scelerisque pulvinar. Quisque eget leo pellentesque, consequat ante vitae, fringilla lorem.
+
+                    Ut volutpat lacus eu malesuada iaculis. Cras neque leo, varius sed aliquam nec, consectetur at lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam leo vel mattis vestibulum. Aenean a neque dictum, faucibus arcu eget, placerat nisi. Nam et mauris lacinia, placerat urna non, pellentesque velit. Duis cursus, augue nec dictum rutrum, quam tellus faucibus eros, id lobortis nulla mi eu mauris. Maecenas pellentesque turpis sed eros sodales mattis. Sed eu lectus a metus molestie aliquet vitae sit amet sem. Nunc sit amet rhoncus erat. Morbi eget accumsan ex. Aliquam erat volutpat.
+
+                    Aenean rutrum libero non elementum porta. Curabitur dignissim justo ligula, non luctus neque semper sit amet. In lacus nulla, consequat nec diam et, ullamcorper ultricies sapien. Fusce convallis ex in auctor interdum. Duis sit amet justo id nisi iaculis pulvinar id eget ligula. Sed a aliquam sapien. Phasellus suscipit pretium nunc vel suscipit. Ut posuere purus ac ex aliquet, sed viverra felis hendrerit. Vivamus enim turpis, hendrerit non lorem non, scelerisque aliquam purus. Nulla eu euismod justo. Aliquam ut lobortis nibh. Pellentesque non bibendum est. Aenean ac eros accumsan, malesuada enim eget, vulputate justo. Nulla facilisi. Mauris vitae dolor tellus. Fusce quis purus ut augue hendrerit tempus ut at neque.
+
+                    Maecenas dictum urna in laoreet eleifend. Nam vel ultricies felis. Nullam iaculis, mauris sit amet pretium hendrerit, mi orci ultricies lacus, id congue elit tortor a nisl. Cras sit amet massa ante. Vestibulum aliquam interdum bibendum. Nulla et dui purus. Duis condimentum metus vitae leo fringilla feugiat. Curabitur dictum blandit placerat. Nam vulputate rhoncus luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum sit amet lacus nec aliquet. Proin lobortis tristique mauris, quis interdum leo imperdiet vitae. Suspendisse id ex sed turpis viverra finibus ut in ipsum.
+
+                    Vivamus euismod quam eu lorem porttitor feugiat. Duis turpis mauris, aliquet ac maximus eget, venenatis ut orci. Duis dapibus tristique elit, id luctus urna egestas at. In interdum velit libero, ac pretium enim fringilla scelerisque. Vivamus id metus dictum, egestas eros et, ullamcorper arcu. Phasellus a pharetra mauris. Pellentesque volutpat porttitor finibus. Vivamus pellentesque ipsum quis quam eleifend, vitae tincidunt lectus pharetra. Donec ut nisi vitae risus ultricies condimentum sit amet quis libero. Integer vestibulum, ligula sit amet tempus porttitor, lectus dolor sodales lorem, congue hendrerit quam neque in turpis. Vestibulum pretium, augue gravida aliquam tempor, mauris justo ultrices nibh, vitae ultrices risus justo et erat. Curabitur at consequat mi. Etiam eu viverra augue, in mollis sapien. Cras fringilla erat vel neque malesuada lacinia. Mauris neque eros, finibus quis ornare at, condimentum id justo.
+

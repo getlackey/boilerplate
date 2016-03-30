@@ -1,0 +1,8 @@
+{> "~/core/partials/structure" theme="sky" title="Enigma Marketing Services" /}
+
+{<content}
+    <div style="max-width: 600px; margin: auto">
+        <h1 style="text-align:center; margin: 15px">Have you seen my tuna can?</h1>
+        <img src="img/core/404.jpg" style="max-width: 600px"/>
+    </div>
+{/content}
